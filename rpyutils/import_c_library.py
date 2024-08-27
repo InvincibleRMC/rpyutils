@@ -15,12 +15,13 @@
 import importlib
 import os
 from pathlib import Path
+from types import ModuleType
 from typing import Optional
 
 from rpyutils import add_dll_directories_from_env
 
 
-def import_c_library(name: str, package: Optional[str] = None):
+def import_c_library(name: str, package: Optional[str] = None) -> ModuleType:
     """
     Import and return a C extension library using importlib, with consistent error messaging.
 

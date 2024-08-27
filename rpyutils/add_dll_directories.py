@@ -15,10 +15,12 @@
 from contextlib import contextmanager
 import os
 import sys
+from typing import Generator, List
 
 
 @contextmanager
-def add_dll_directories_from_env(env_name: str):
+def add_dll_directories_from_env(env_name: str
+                                 ) -> 'Generator[List[os._AddedDllDirectory], None, None]':
     """
     Add a list of directories from an environment variable to the DLL search path on Windows.
 
@@ -38,7 +40,7 @@ def add_dll_directories_from_env(env_name: str):
     :param env_name: The name of the environment variable with DLL search paths.
     :return: A list of handles to directories.
     """
-    dll_dir_handles = []
+    dll_dir_handles: 'List[os._AddedDllDirectory]' = []
     # This function only makes sense on Windows and if the function 'add_dll_directory' exists
     if sys.platform == 'win32' and hasattr(os, 'add_dll_directory'):
         env_value = os.environ.get(env_name)
