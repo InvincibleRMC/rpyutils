@@ -2,8 +2,8 @@
 Changelog for package rpyutils
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.0 (2024-10-03)
+------------------
 * Add types and ament_mypy to rpyutils. (`#12 <https://github.com/ros2/rpyutils/issues/12>`_)
 * Contributors: Michael Carlstrom
 
